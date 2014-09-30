@@ -9,7 +9,7 @@ var mainState = {
         // Load the bird sprite
         game.load.image('bird', 'assets/bird.png'); 
         // Load the pipe sprite
-        game.load.image('pipe', 'assets/pipe.png');  
+        game.load.spritesheet('pipe', 'assets/pipe.png', 15, 15);  
     },
 
     create: function() {  
@@ -21,7 +21,7 @@ var mainState = {
 
         // Add gravity to the bird to make it fall
         game.physics.arcade.enable(this.bird);
-        this.bird.body.gravity.y = 1000;  
+        this.bird.body.gravity.y = 800;  
 
         this.pipes = game.add.group(); // Create a group  
         this.pipes.enableBody = true;  // Add physics to the group  
@@ -46,7 +46,7 @@ var mainState = {
     // Make the bird jump 
     jump: function() {  
         // Add a vertical velocity to the bird
-        this.bird.body.velocity.y = -350;
+        this.bird.body.velocity.y = -300;
     },
 
     // Restart the game
